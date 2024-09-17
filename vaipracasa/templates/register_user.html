@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Usuário</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <h1>Cadastro de Usuário</h1>
+    <form action="{{ url_for('register_user') }}" method="POST">
+        <label for="loginUser">Usuário:</label>
+        <input type="text" id="loginUser" name="loginUser" required>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+        <label for="tipoUser">Tipo de Usuário:</label>
+        <select id="tipoUser" name="tipoUser" required>
+            <option value="normal">Normal</option>
+            <option value="super">Super</option>
+        </select>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <p>Já tem uma conta? <a href="{{ url_for('index') }}">Faça login</a></p>
+</body>
+</html>
